@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gear Inches Calculator and Formula | Cogspan</title>
+  <meta name="description" content="Gear inches equal chainring teeth divided by cog teeth, times the wheel’s rolling diameter in inches. A worked 50×11 and 34×28 example on a 700×28c tire.">
+  <link rel="canonical" href="https://darrenanderson94.github.io/gear-inches/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Cogspan">
+  <meta property="og:title" content="Gear Inches Calculator and Formula">
+  <meta property="og:description" content="What a gear inch is, the formula, and a worked 50×11 on a 700×28c wheel.">
+  <meta property="og:url" content="https://darrenanderson94.github.io/gear-inches/">
+  <meta property="og:image" content="https://darrenanderson94.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gear Inches Calculator and Formula">
+  <meta name="twitter:description" content="What a gear inch is, the formula, and a worked 50×11 on a 700×28c wheel.">
+  <meta name="twitter:image" content="https://darrenanderson94.github.io/og.png">
+  <meta name="theme-color" content="#e8e2d6">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- ANALYTICS PLACEHOLDER: no analytics script is loaded. -->
+</head>
+<body>
+  <a class="skip" href="#content">Skip to the article</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="../">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1c1916"/><circle cx="16" cy="16" r="7.5" fill="none" stroke="#f6f3ed" stroke-width="2"/><circle cx="16" cy="16" r="2.2" fill="#e7b199"/></svg>
+        Cogspan
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Calculator</a>
+        <a href="../gear-inches/" aria-current="page">Gear inches</a>
+        <a href="../rollout/">Rollout</a>
+        <a href="../cadence-and-speed/">Speed</a>
+        <a href="../cassette-comparison/">Compare</a>
+        <a href="../wheel-size/">Wheels</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap prose" id="content">
+    <p class="crumbs"><a href="../">Home</a> / Gear inches</p>
+    <p class="eyebrow">Formula</p>
+    <h1>Gear inches, worked by hand</h1>
+    <p class="lede">A gear inch is the diameter of a direct-drive wheel that would travel as far, per pedal stroke, as the gear you are in. Bigger is harder and faster. Smaller is easier.</p>
+
+    <h2>The formula</h2>
+    <p>Count teeth, then measure the wheel that actually rolls, not the number printed on an old catalog page.</p>
+    <p class="formula">gear inches = (chainring ÷ cog) × rolling diameter in inches</p>
+    <p>The rolling diameter used here is the rim’s ISO bead-seat diameter plus twice the tire’s height. The default treats height as the labeled width. A 700c rim is 622 mm at the bead seat. A 28 mm tire at a height factor of 1 makes the rolling diameter 622 + 56 = 678 mm, which is 26.69 inches.</p>
+
+    <h2>50×11 and 34×28 on that wheel</h2>
+    <p>Ratio first. 50 ÷ 11 = 4.55. 34 ÷ 28 = 1.21. Multiply each by 26.69 inches.</p>
+    <div class="table-wrap">
+      <table>
+        <caption>Estimated gear inches for a 678 mm rolling diameter. Speed is at 90 rpm with no tire slip.</caption>
+        <thead>
+          <tr><th scope="col">Gear</th><th scope="col">Ratio</th><th scope="col">Gear inches</th><th scope="col">Rollout</th><th scope="col">90 rpm</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">50×11</th><td>4.55</td><td>121.3 in</td><td>9.68 m</td><td>32.5 mph</td></tr>
+          <tr><th scope="row">34×28</th><td>1.21</td><td>32.4 in</td><td>2.59 m</td><td>8.7 mph</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The range of that drivetrain is 121.3 ÷ 32.4, which is the same as dividing the ratios: 3.74×. The hard gear covers about 3.74 times as much ground per stroke as the easy gear.</p>
+    <p>A one-tooth step at the small end of a cassette is a real change, not a duplicate. 50×11 versus 50×12 is about 9%. Cogspan marks a gear as close only when another combination on the same bike is within 3%, which is tighter than a normal one-tooth jump. On a double, that usually means the same rollout reached with the other ring, such as 50×16 and 34×11.</p>
+
+    <h2>What changes the number</h2>
+    <ul>
+      <li>More teeth on the chainring, or fewer on the cog, raises gear inches.</li>
+      <li>A larger wheel or a taller tire raises every gear, even when the tooth counts stay put. The <a href="../wheel-size/">wheel size guide</a> puts the same 50×11 on several rims.</li>
+      <li>Gear inches do not include crank length. Gain ratio does: wheel radius divided by crank length, times the gear ratio. The calculator shows it when you enter a crank length.</li>
+    </ul>
+    <p>These are planning figures. A worn tire, a liner, or a heavy load changes the rolling diameter a little. If you are comparing two wheels that should be close, <a href="../rollout/">measure one revolution</a> and use that instead of the estimate.</p>
+    <p><a href="../?wheel=700x28&amp;bsd=622&amp;width=28&amp;r1=50&amp;r2=34&amp;r3=&amp;cogs=11,12,13,14,15,17,19,21,23,25,28&amp;alt=11,13,15,17,19,21,23,25,27,30,34&amp;rpm=90&amp;unit=mph">Open this 50/34 example in the calculator</a>.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="brand-foot">Cogspan</p>
+        <p>Gear inches, rollout, and speed from the chainrings, cassette, and wheel you actually have.</p>
+      </div>
+      <div>
+        <p class="foot-label">Guides</p>
+        <a href="../gear-inches/">Gear inches</a>
+        <a href="../rollout/">Rollout</a>
+        <a href="../cadence-and-speed/">Speed from cadence</a>
+        <a href="../cassette-comparison/">Compare cassettes</a>
+        <a href="../wheel-size/">Wheel and tire size</a>
+      </div>
+      <div>
+        <p class="foot-label">Site</p>
+        <a href="../about/">About</a>
+        <a href="../privacy/">Privacy</a>
+      </div>
+    </div>
+    <div class="wrap legal"><p>Planning estimates, not a fit, a training plan, or a derailleur compatibility certificate.</p></div>
+  </footer>
+</body>
+</html>

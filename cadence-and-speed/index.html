@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bike Speed from Cadence and Gearing | Cogspan</title>
+  <meta name="description" content="Speed equals rollout times cadence. See 50×11 at 70, 80, 90, and 100 rpm, and what that number leaves out: wind, grade, and coasting.">
+  <link rel="canonical" href="https://darrenanderson94.github.io/cadence-and-speed/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Cogspan">
+  <meta property="og:title" content="Bike Speed from Cadence and Gearing">
+  <meta property="og:description" content="How rollout and cadence become a speed, with a 50×11 table from 70 to 100 rpm.">
+  <meta property="og:url" content="https://darrenanderson94.github.io/cadence-and-speed/">
+  <meta property="og:image" content="https://darrenanderson94.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bike Speed from Cadence and Gearing">
+  <meta name="twitter:description" content="Rollout times cadence, and what that speed figure does not include.">
+  <meta name="twitter:image" content="https://darrenanderson94.github.io/og.png">
+  <meta name="theme-color" content="#e8e2d6">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- ANALYTICS PLACEHOLDER: no analytics script is loaded. -->
+</head>
+<body>
+  <a class="skip" href="#content">Skip to the article</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="../">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1c1916"/><circle cx="16" cy="16" r="7.5" fill="none" stroke="#f6f3ed" stroke-width="2"/><circle cx="16" cy="16" r="2.2" fill="#e7b199"/></svg>
+        Cogspan
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Calculator</a>
+        <a href="../gear-inches/">Gear inches</a>
+        <a href="../rollout/">Rollout</a>
+        <a href="../cadence-and-speed/" aria-current="page">Speed</a>
+        <a href="../cassette-comparison/">Compare</a>
+        <a href="../wheel-size/">Wheels</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap prose" id="content">
+    <p class="crumbs"><a href="../">Home</a> / Speed</p>
+    <p class="eyebrow">Cadence</p>
+    <h1>Speed is rollout times cadence</h1>
+    <p class="lede">Once you know how far one pedal stroke goes, speed is that length times how many strokes you make in a minute. The calculator is doing that and nothing more athletic than that.</p>
+
+    <h2>The formula</h2>
+    <p class="formula">km/h = rollout (m) × cadence (rpm) × 60 ÷ 1000</p>
+    <p>Miles per hour are that result divided by 1.609344. A 9.68 m rollout at 90 rpm is 9.68 × 90 × 0.06 = 52.3 km/h, or 32.5 mph.</p>
+
+    <h2>One gear, four cadences</h2>
+    <p>The gear is 50×11 on a 700×28c tire with the height-factor-1 estimate (678 mm, 9.68 m of rollout). Only the cadence changes.</p>
+    <div class="table-wrap">
+      <table>
+        <caption>Speed of a 50×11 at a steady cadence, assuming the tire does not slip.</caption>
+        <thead>
+          <tr><th scope="col">Cadence</th><th scope="col">mph</th><th scope="col">km/h</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">70 rpm</th><td>25.3</td><td>40.7</td></tr>
+          <tr><th scope="row">80 rpm</th><td>28.9</td><td>46.5</td></tr>
+          <tr><th scope="row">90 rpm</th><td>32.5</td><td>52.3</td></tr>
+          <tr><th scope="row">100 rpm</th><td>36.1</td><td>58.1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The same wheel’s easiest gear in the loaded road example, 34×28, is 2.59 m of rollout: 8.7 mph (14.0 km/h) at 90 rpm. That is why a cassette swap is a speed question and a climbing question at once. The <a href="../cassette-comparison/">11–28 versus 11–34 comparison</a> keeps the top end and lowers the bottom.</p>
+
+    <h2>What the number leaves out</h2>
+    <ul>
+      <li>Wind, grade, and braking. The figure is the speed of the contact patch at a steady cadence, not a prediction for a ride.</li>
+      <li>Coasting. Cadence is zero while the bike keeps moving. The formula does not describe that.</li>
+      <li>Tire slip and skids. The math assumes the tire rolls the distance it is supposed to roll.</li>
+      <li>A recommended cadence. Cogspan will not tell you what to pedal. Type the cadence you actually use, or try a few, and read the speed that gear produces at that rate.</li>
+    </ul>
+    <p>If you want the chart in km/h, switch the unit on the calculator. The gear inches and the rollout stay in the same units either way.</p>
+    <p><a href="../?wheel=700x28&amp;bsd=622&amp;width=28&amp;r1=50&amp;r2=34&amp;r3=&amp;cogs=11,12,13,14,15,17,19,21,23,25,28&amp;alt=&amp;rpm=90&amp;unit=mph">Open the chart at 90 rpm</a>.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div><p class="brand-foot">Cogspan</p><p>Speed here means rollout times cadence.</p></div>
+      <div>
+        <p class="foot-label">Guides</p>
+        <a href="../gear-inches/">Gear inches</a>
+        <a href="../rollout/">Rollout</a>
+        <a href="../cadence-and-speed/">Speed from cadence</a>
+        <a href="../cassette-comparison/">Compare cassettes</a>
+        <a href="../wheel-size/">Wheel and tire size</a>
+      </div>
+      <div>
+        <p class="foot-label">Site</p>
+        <a href="../about/">About</a>
+        <a href="../privacy/">Privacy</a>
+      </div>
+    </div>
+    <div class="wrap legal"><p>Not a training plan and not a speed you are expected to hold.</p></div>
+  </footer>
+</body>
+</html>

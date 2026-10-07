@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bicycle Rollout Calculator: Meters per Pedal Stroke | Cogspan</title>
+  <meta name="description" content="Rollout, also called development, is how far the bike travels in one pedal revolution. Formula, a 50×11 example, and how to measure it with a tape.">
+  <link rel="canonical" href="https://darrenanderson94.github.io/rollout/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Cogspan">
+  <meta property="og:title" content="Bicycle Rollout Calculator: Meters per Pedal Stroke">
+  <meta property="og:description" content="Rollout is distance per pedal revolution. Formula, a worked example, and how to measure it.">
+  <meta property="og:url" content="https://darrenanderson94.github.io/rollout/">
+  <meta property="og:image" content="https://darrenanderson94.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bicycle Rollout Calculator">
+  <meta name="twitter:description" content="Distance per pedal revolution, plus how to measure one wheel turn with a tape.">
+  <meta name="twitter:image" content="https://darrenanderson94.github.io/og.png">
+  <meta name="theme-color" content="#e8e2d6">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- ANALYTICS PLACEHOLDER: no analytics script is loaded. -->
+</head>
+<body>
+  <a class="skip" href="#content">Skip to the article</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="../">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1c1916"/><circle cx="16" cy="16" r="7.5" fill="none" stroke="#f6f3ed" stroke-width="2"/><circle cx="16" cy="16" r="2.2" fill="#e7b199"/></svg>
+        Cogspan
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Calculator</a>
+        <a href="../gear-inches/">Gear inches</a>
+        <a href="../rollout/" aria-current="page">Rollout</a>
+        <a href="../cadence-and-speed/">Speed</a>
+        <a href="../cassette-comparison/">Compare</a>
+        <a href="../wheel-size/">Wheels</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap prose" id="content">
+    <p class="crumbs"><a href="../">Home</a> / Rollout</p>
+    <p class="eyebrow">Development</p>
+    <h1>How far one pedal stroke goes</h1>
+    <p class="lede">Rollout, also called development, is the distance the bike travels in one full turn of the cranks. Riders who think in meters usually prefer it to gear inches. It is the same drivetrain, described as a length instead of an equivalent wheel.</p>
+
+    <h2>The formula</h2>
+    <p class="formula">rollout (m) = (chainring ÷ cog) × π × rolling diameter (m)</p>
+    <p>Gear inches convert to rollout without another look at the cassette: multiply gear inches by 25.4 × π ÷ 1000. A 121.3 inch gear is 9.68 meters of rollout. A 32.4 inch gear is 2.59 meters. Those two numbers are 50×11 and 34×28 on a 678 mm wheel, the same example as the <a href="../gear-inches/">gear inches page</a>.</p>
+
+    <h2>Measure it when the tire is the unknown</h2>
+    <p>The labeled width is not the mounted height. A knobby, an insert, or a tire that stretches short of its label will miss the estimate. Measuring takes a minute and replaces the guess:</p>
+    <ol>
+      <li>Sit the bike on a flat floor with the tire at the pressure you ride.</li>
+      <li>Mark the tire and the floor at the contact patch, valve stem at the bottom is an easy mark.</li>
+      <li>Roll the bike straight until that mark meets the floor again. That is one wheel revolution, not one pedal stroke.</li>
+      <li>Measure the distance in millimeters and put it in “Measured rollout” on the calculator.</li>
+    </ol>
+    <p>The calculator treats that length as the wheel’s circumference and ignores bead seat and width. Pedal-stroke rollout is still that circumference times chainring ÷ cog. You measured the wheel, not the gear. The gear is the wheel times the ratio.</p>
+    <p>A 678 mm diameter is a circumference of about 2130 mm. If your tape reads 2100 mm, use 2100. Do not also edit the tire width. The measurement wins.</p>
+
+    <h2>Why two bikes with the same ratio feel different</h2>
+    <p>A 32×16 is a ratio of 2.00 on any bike. On a 700×28c the rollout is about 4.26 meters. On a 29×2.4, using a 744 mm estimate, the same teeth roll farther because the wheel is taller. Ratio tables that ignore the tire are fine for comparing cogs on one bike. They are the wrong tool for comparing a road wheel with a 29er. Use <a href="../wheel-size/">the wheel comparison</a> or enter both sizes in the calculator.</p>
+    <p><a href="../?wheel=700x28&amp;bsd=622&amp;width=28&amp;r1=50&amp;r2=34&amp;r3=&amp;cogs=11,12,13,14,15,17,19,21,23,25,28&amp;alt=&amp;rpm=90&amp;unit=mph">Chart rollout for the 50/34 example</a>.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div><p class="brand-foot">Cogspan</p><p>The math runs in your browser.</p></div>
+      <div>
+        <p class="foot-label">Guides</p>
+        <a href="../gear-inches/">Gear inches</a>
+        <a href="../rollout/">Rollout</a>
+        <a href="../cadence-and-speed/">Speed from cadence</a>
+        <a href="../cassette-comparison/">Compare cassettes</a>
+        <a href="../wheel-size/">Wheel and tire size</a>
+      </div>
+      <div>
+        <p class="foot-label">Site</p>
+        <a href="../about/">About</a>
+        <a href="../privacy/">Privacy</a>
+      </div>
+    </div>
+    <div class="wrap legal"><p>A measured rollout is a wheel circumference. It is not a promise about speed on a climb.</p></div>
+  </footer>
+</body>
+</html>

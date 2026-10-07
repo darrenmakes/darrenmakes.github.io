@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cogspan — Bicycle Gear Inches Calculator</title>
+  <meta name="description" content="Calculate bicycle gear inches, rollout, and speed at your cadence. Compare two cassettes and see which steps you already have. Free, in your browser.">
+  <link rel="canonical" href="https://darrenanderson94.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cogspan">
+  <meta property="og:title" content="Cogspan — Bicycle Gear Inches Calculator">
+  <meta property="og:description" content="Chart gear inches, rollout, and speed for your chainrings and cassette, then compare a second cassette.">
+  <meta property="og:url" content="https://darrenanderson94.github.io/">
+  <meta property="og:image" content="https://darrenanderson94.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cogspan — Bicycle Gear Inches Calculator">
+  <meta name="twitter:description" content="Chart gear inches, rollout, and speed, then compare a second cassette.">
+  <meta name="twitter:image" content="https://darrenanderson94.github.io/og.png">
+  <meta name="theme-color" content="#e8e2d6">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- ANALYTICS PLACEHOLDER: no analytics script is loaded. A privacy-respecting snippet can be added here later. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Cogspan",
+    "url": "https://darrenanderson94.github.io/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "A free bicycle gear calculator for gear inches, rollout, and speed at a chosen cadence, including a comparison of two cassettes.",
+    "browserRequirements": "Requires JavaScript for the calculator. Guides are static HTML."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#calculator">Skip to the calculator</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="./">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="7" fill="#1c1916"/>
+          <circle cx="16" cy="16" r="7.5" fill="none" stroke="#f6f3ed" stroke-width="2"/>
+          <circle cx="16" cy="16" r="2.2" fill="#e7b199"/>
+          <path d="M16 6.2v3.1M16 22.7v3.1M6.2 16h3.1M22.7 16h3.1M9.1 9.1l2.2 2.2M20.7 20.7l2.2 2.2M22.9 9.1l-2.2 2.2M11.3 20.7l-2.2 2.2" stroke="#f6f3ed" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Cogspan
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./" aria-current="page">Calculator</a>
+        <a href="gear-inches/">Gear inches</a>
+        <a href="rollout/">Rollout</a>
+        <a href="cadence-and-speed/">Speed</a>
+        <a href="cassette-comparison/">Compare</a>
+        <a href="wheel-size/">Wheels</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <p class="eyebrow">Bicycle gearing</p>
+      <h1>Chart the cassette before you buy it.</h1>
+      <p class="lede">Cogspan turns your chainrings, cogs, and wheel into gear inches, rollout, and speed at the cadence you actually pedal. Add a second cassette to see the new easy gear and the steps you already have.</p>
+      <p class="examples">Examples: <a href="?wheel=700x28&amp;bsd=622&amp;width=28&amp;r1=50&amp;r2=34&amp;r3=&amp;cogs=11,12,13,14,15,17,19,21,23,25,28&amp;alt=11,13,15,17,19,21,23,25,27,30,34&amp;rpm=90&amp;unit=mph">50/34, 11–28 vs 11–34</a> · <a href="?wheel=29x24&amp;bsd=622&amp;width=61&amp;r1=32&amp;r2=&amp;r3=&amp;cogs=10,12,14,16,18,21,24,28,32,36,42,52&amp;alt=&amp;rpm=80&amp;unit=mph">1× 32t with a 10–52</a></p>
+    </div>
+
+    <div class="wrap tool" id="calculator">
+      <form class="panel controls" id="gear-form">
+        <div class="stack">
+          <label class="field">Wheel
+            <select id="wheel" name="wheel">
+              <option value="700x23" data-bsd="622" data-width="23">700×23c</option>
+              <option value="700x25" data-bsd="622" data-width="25">700×25c</option>
+              <option value="700x28" data-bsd="622" data-width="28" selected>700×28c</option>
+              <option value="700x32" data-bsd="622" data-width="32">700×32c</option>
+              <option value="700x35" data-bsd="622" data-width="35">700×35c</option>
+              <option value="700x40" data-bsd="622" data-width="40">700×40c</option>
+              <option value="650x47" data-bsd="584" data-width="47">650b × 47 mm</option>
+              <option value="275x24" data-bsd="584" data-width="61">27.5 × 2.4 in</option>
+              <option value="29x24" data-bsd="622" data-width="61">29 × 2.4 in</option>
+              <option value="26x21" data-bsd="559" data-width="53">26 × 2.1 in</option>
+              <option value="27x125" data-bsd="630" data-width="32">27 × 1¼ in</option>
+              <option value="custom">Custom rim</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Chainrings</legend>
+            <div class="rings">
+              <label class="field">Large
+                <input id="r1" name="r1" inputmode="numeric" autocomplete="off" value="50">
+              </label>
+              <label class="field">Middle
+                <input id="r2" name="r2" inputmode="numeric" autocomplete="off" value="34" placeholder="—">
+              </label>
+              <label class="field">Small
+                <input id="r3" name="r3" inputmode="numeric" autocomplete="off" placeholder="—">
+              </label>
+            </div>
+            <p class="hint">Leave unused rings blank. A 1× setup uses the large field only.</p>
+          </fieldset>
+
+          <label class="field">Cassette you have
+            <select id="cassette">
+              <option value="11,12,13,14,15,16,17,19,21,23,25">11–25 · 11 cogs</option>
+              <option value="11,12,13,14,15,17,19,21,23,25,28" selected>11–28 · 11 cogs</option>
+              <option value="11,12,13,14,15,17,19,21,24,27,30">11–30 · 11 cogs</option>
+              <option value="11,12,13,14,16,18,20,22,25,28,32">11–32 · 11 cogs</option>
+              <option value="11,13,15,17,19,21,23,25,27,30,34">11–34 · 11 cogs</option>
+              <option value="11,12,13,14,15,17,19,21,24,27,30,34">11–34 · 12 cogs</option>
+              <option value="10,11,12,13,14,15,17,19,21,24,28,33">10–33 · 12 cogs</option>
+              <option value="10,11,12,13,15,17,19,21,24,28,32,36">10–36 · 12 cogs</option>
+              <option value="11,13,15,17,19,21,24,28,32,37,42">11–42 · 11 cogs</option>
+              <option value="10,12,14,16,18,21,24,28,33,39,45,51">10–51 · 12 cogs</option>
+              <option value="10,12,14,16,18,21,24,28,32,36,42,52">10–52 · 12 cogs</option>
+              <option value="">Custom tooth list</option>
+            </select>
+          </label>
+          <label class="field">Tooth counts
+            <input id="cogs" name="cogs" autocomplete="off" value="11,12,13,14,15,17,19,21,23,25,28">
+          </label>
+          <p id="cogs-error" class="field-error" hidden></p>
+          <p class="hint">Presets are common published sequences, not a catalog. Edit any number that does not match the cassette in your hand.</p>
+
+          <label class="field">Cassette you are considering
+            <select id="alt-cassette">
+              <option value="__none__">None</option>
+              <option value="11,12,13,14,15,16,17,19,21,23,25">11–25 · 11 cogs</option>
+              <option value="11,12,13,14,15,17,19,21,23,25,28">11–28 · 11 cogs</option>
+              <option value="11,12,13,14,15,17,19,21,24,27,30">11–30 · 11 cogs</option>
+              <option value="11,12,13,14,16,18,20,22,25,28,32">11–32 · 11 cogs</option>
+              <option value="11,13,15,17,19,21,23,25,27,30,34" selected>11–34 · 11 cogs</option>
+              <option value="11,12,13,14,15,17,19,21,24,27,30,34">11–34 · 12 cogs</option>
+              <option value="10,11,12,13,14,15,17,19,21,24,28,33">10–33 · 12 cogs</option>
+              <option value="10,11,12,13,15,17,19,21,24,28,32,36">10–36 · 12 cogs</option>
+              <option value="11,13,15,17,19,21,24,28,32,37,42">11–42 · 11 cogs</option>
+              <option value="10,12,14,16,18,21,24,28,33,39,45,51">10–51 · 12 cogs</option>
+              <option value="10,12,14,16,18,21,24,28,32,36,42,52">10–52 · 12 cogs</option>
+              <option value="">Custom tooth list</option>
+            </select>
+          </label>
+          <label class="field">Its tooth counts
+            <input id="alt" name="alt" autocomplete="off" value="11,13,15,17,19,21,23,25,27,30,34">
+          </label>
+          <p id="alt-error" class="field-error" hidden></p>
+          <p class="hint">Clear this field to chart one cassette only.</p>
+
+          <label class="field">Cadence (rpm)
+            <input id="rpm" name="rpm" type="number" min="40" max="160" step="1" inputmode="numeric" value="90">
+          </label>
+
+          <fieldset class="unit">
+            <legend>Speed unit</legend>
+            <label><input type="radio" name="unit" value="mph" checked> mph</label>
+            <label><input type="radio" name="unit" value="kmh"> km/h</label>
+          </fieldset>
+
+          <details class="advanced" id="advanced">
+            <summary>Wheel measurement and crank — <span id="wheel-spec">700×28c</span></summary>
+            <div class="stack">
+              <label class="field">Bead-seat diameter (mm)
+                <input id="bsd" name="bsd" type="number" min="200" max="800" step="1" inputmode="numeric" value="622">
+              </label>
+              <label class="field">Tire width (mm)
+                <input id="width" name="width" type="number" min="10" max="100" step="1" inputmode="numeric" value="28">
+              </label>
+              <label class="field">Tire height factor
+                <input id="factor" name="factor" type="number" min="0.7" max="1.2" step="0.01" inputmode="decimal" value="1">
+              </label>
+              <p class="hint">1 means the tire is as tall as its labeled width. Lower it if you know the mounted tire is shorter.</p>
+              <label class="field">Measured rollout (mm)
+                <input id="roll" name="roll" type="number" min="400" max="3500" step="1" inputmode="numeric" placeholder="Optional">
+              </label>
+              <p class="hint">Roll the bike one wheel revolution and enter that distance. It replaces the tire-height estimate.</p>
+              <label class="field">Crank length (mm)
+                <input id="crank" name="crank" type="number" min="100" max="250" step="0.5" inputmode="decimal" placeholder="Optional, often 170">
+              </label>
+              <p class="hint">Filled in, each gear also gets a gain ratio: wheel radius ÷ crank length × gear ratio.</p>
+            </div>
+          </details>
+
+          <div class="actions">
+            <button class="primary" type="submit">Update chart</button>
+            <button class="ghost" type="button" id="reset">Reset</button>
+          </div>
+        </div>
+      </form>
+
+      <section class="panel results" aria-label="Gear chart">
+        <h2 class="sr-only">Gear chart</h2>
+        <p id="form-error" class="field-error" hidden></p>
+        <p id="status" class="sr-only" aria-live="polite"></p>
+        <div id="results">
+          <p class="pending">Preparing the chart…</p>
+        </div>
+        <p id="copy-note" class="copied" hidden></p>
+        <noscript>
+          <p>The chart needs JavaScript. It runs entirely in this browser and does not send your numbers anywhere. The guides in the footer stay readable with JavaScript off.</p>
+        </noscript>
+      </section>
+    </div>
+
+    <section class="wrap section">
+      <h2>What the chart is telling you</h2>
+      <p class="lede">The opening example is a 50/34 with a common 11-cog 11–28, on a 700×28c tire, compared with an 11-cog 11–34, at 90 rpm. With the tire treated as tall as it is wide, that wheel is a 678 mm rolling diameter.</p>
+      <div class="guides">
+        <a class="guide" href="gear-inches/">
+          <h3>Gear inches</h3>
+          <p>Ratio times wheel diameter. On this example, 50×11 is 121.3 in and 34×28 is 32.4 in.</p>
+        </a>
+        <a class="guide" href="rollout/">
+          <h3>Rollout</h3>
+          <p>Distance per pedal stroke. That 50×11 moves 9.68 meters. A measured rollout beats the tire estimate.</p>
+        </a>
+        <a class="guide" href="cadence-and-speed/">
+          <h3>Speed</h3>
+          <p>Rollout times cadence. 50×11 at 90 rpm is 32.5 mph, if the tire is not slipping.</p>
+        </a>
+        <a class="guide" href="cassette-comparison/">
+          <h3>11–28 vs 11–34</h3>
+          <p>The low gear gets 17.6% easier. The top gear does not change. Most steps are ones you already have.</p>
+        </a>
+        <a class="guide" href="wheel-size/">
+          <h3>Wheel size</h3>
+          <p>A wider tire on the same rim is a taller gear. A 29×2.4 and a 700×28c do not share a gear inch.</p>
+        </a>
+        <a class="guide" href="about/">
+          <h3>What this is not</h3>
+          <p>Not a fit tool, not a training plan, and not a promise that a derailleur will shift the span.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="wrap section faq">
+      <h2>Questions riders ask before a cassette swap</h2>
+      <details open>
+        <summary>What is a gear inch?</summary>
+        <p>Gear inches are the gear ratio multiplied by the wheel’s rolling diameter in inches. A higher number moves the bike farther per pedal stroke. The <a href="gear-inches/">gear inches guide</a> works a 50×11 by hand.</p>
+      </details>
+      <details>
+        <summary>Does a bigger tire change the gear?</summary>
+        <p>Yes. The calculator adds twice the tire width to the rim’s bead-seat diameter. A wider tire raises every gear inch on that bike. See <a href="wheel-size/">how wheel size shifts the chart</a>.</p>
+      </details>
+      <details>
+        <summary>Will an 11–34 be easier than an 11–28?</summary>
+        <p>With the same small chainring, the bigger cog is a lower gear. On the loaded example it is 17.6% easier, and the 50×11 top gear stays put. The <a href="cassette-comparison/">comparison page</a> shows which other cogs are new and which duplicate a gear you can already shift to. It does not say whether you need the easier gear.</p>
+      </details>
+      <details>
+        <summary>Do you store what I type?</summary>
+        <p>The numbers stay in this browser. Cogspan has no account and no server-side calculator. A local storage entry named cogspan.v1 remembers the last wheel, tooth counts, cadence, and unit on this device. Nothing is sent anywhere. Details are on the <a href="privacy/">privacy page</a>.</p>
+      </details>
+    </section>
+
+    <div class="wrap">
+      <aside class="slot" aria-label="Future sponsorship slot">
+        <p><strong>Empty on purpose.</strong> A future ad or affiliate placement would sit here, with a disclosure, after a shop link is actually approved. No outside script is loaded.</p>
+      </aside>
+      <!-- MONETIZATION PLACEHOLDER: disclosure-labeled affiliate or ad unit. Do not add a third-party script until the privacy page names it. -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="brand-foot">Cogspan</p>
+        <p>Gear inches, rollout, and speed from the chainrings, cassette, and wheel you actually have. The math runs in your browser.</p>
+      </div>
+      <div>
+        <p class="foot-label">Guides</p>
+        <a href="gear-inches/">Gear inches</a>
+        <a href="rollout/">Rollout</a>
+        <a href="cadence-and-speed/">Speed from cadence</a>
+        <a href="cassette-comparison/">Compare cassettes</a>
+        <a href="wheel-size/">Wheel and tire size</a>
+      </div>
+      <div>
+        <p class="foot-label">Site</p>
+        <a href="about/">About</a>
+        <a href="privacy/">Privacy</a>
+      </div>
+    </div>
+    <div class="wrap legal">
+      <p>Gear inches equal the gear ratio times the rolling diameter in inches. Rollout is the distance traveled in one pedal revolution. Figures are planning estimates, not a bike fit, a training plan, or a derailleur compatibility certificate.</p>
+    </div>
+  </footer>
+  <script src="js/gear.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
