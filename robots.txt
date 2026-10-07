@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://darrenanderson94.github.io/sitemap.xml
+Sitemap: https://darrenmakes.github.io/sitemap.xml
